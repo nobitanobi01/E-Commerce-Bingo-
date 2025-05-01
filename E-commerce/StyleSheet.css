@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Winky Rough", sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.7;
+    transition: opacity 0.3s, background-color 0.3s;
+    display: none;
+}
+
+#backToTop:hover {
+    opacity: 1;
+    background-color: #007bff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Winky Rough", sans-serif;
+}
+
+.search-bar {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.search-bar button i {
+    font-size: 16px;
+}
+
+.search-bar i:hover {
+    color: #007bff;
+}
+
+.icons a {
+    margin-left: 20px;
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.1s;
+    font-family: 'National Park', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.icons a:hover {
+    color: #007bff;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 11;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+
+.sidebar.active {
+    right: 5px;
+    top: 8%;
+    display: flex;
+}
+
+.sidebar-header h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'National Park', sans-serif;
+    font-weight: 700;
+}
+
+.profile {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.profile p {
+    margin: 10px 5px;
+    color: black;
+    font-size: 16px;
+    font-family: 'National Park', sans-serif;
+    font-weight: 500;
+}
+
+.actions button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.settings-btn {
+    background-color: #f0f0f0;
+    font-family: 'National Park', sans-serif;
+    font-weight: 500;
+}
+
+.settings-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.signout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    font-family: 'National Park', sans-serif;
+    font-weight: 500;
+}
+
+.signout-btn:hover {
+    background-color: #d61515;
+}
+
+/* Toggle Button */
+.toggle-sidebar-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Slider  */
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+#slider {
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    margin: 5px auto;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+#slider ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+}
+
+#slider ul li {
+    position: relative;
+    height: 100%;
+    float: left;
+}
+
+#slider ul li img {
+    width: 1200px;
+    height: 600px;
+}
+
+#slider ul li img:hover {
+    cursor: pointer;
+}
+
+#slider #prev,
+#slider #next {
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+}
+
+#slider #prev {
+    left: 10px;
+}
+
+#slider #next {
+    right: 10px;
+}
+
+#slider #prev:hover,
+#slider #next:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0;
+}
+
+/* cards*/
+.container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.container-wrapper .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 24%;
+    background-color: white;
+}
+
+.head {
+    width: 100%;
+}
+
+.head h3 {
+    font-family: "National Park", sans-serif;
+}
+
+.card {
+    width: 150px;
+    padding: 10px;
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+}
+
+.card img:hover {
+
+    cursor: pointer;
+    transition: transform 0.3s;
+
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "National Park", sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+.card a:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* mini slider*/
+.mini-slider {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+}
+
+.mini-slider .heading h3 {
+    margin-bottom: 10px;
+    font-family: "National Park", sans-serif;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+}
+
+.slide img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.slide img:hover {
+    transform: scale(1.1);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+.nav-btn:hover {
+    font-size: 22px;
+}
+
+
+.footer {
+    background-color: #232F3E;
+    color: black;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: "National Park", sans-serif;
+    margin-top: 40px;
+}
+
+.footer-links,
+.footer-social {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a,
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #007bff;
+    font-size: 18px;
+}
+
+.footer-social i {
+    font-size: 22px;
+}
+
+.footer-social i:hover {
+    font-size: 25px;
+}
+
+.footer-legal {
+    font-size: 12px;
+    color: #ddd;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+    }
+
+    .logo {
+        font-size: 18px;
+        margin-bottom: 0;
+        flex: 1 1 auto;
+    }
+
+    .search-bar {
+        flex: 1 1 100%;
+        order: 3;
+        margin: 8px 0 0 0;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+
+    .icons {
+        flex: 0 0 auto;
+    }
+
+    .icons a {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .sidebar {
+        width: 200px;
+        height: 35%;
+        background-color: #fff;
+        padding: 5px;
+        transition: right 0.3s ease;
+        flex-direction: column;
+        justify-content: space-between;
+        display: none;
+    }
+
+    .sidebar.active {
+        right: 0%;
+        top: 8%;
+        display: flex;
+        border-radius: 10px;
+    }
+
+    .actions button {
+        width: 50%;
+        padding: 5px;
+        margin-top: 10px;
+        margin-left: 50px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    /* Slider*/
+    #slider {
+        width: 500px;
+        height: 300px;
+    }
+
+    #slider ul {
+        width: 10000%;
+
+    }
+
+    #slider ul li {
+        height: 300px;
+    }
+
+    #slider ul li img {
+        width: 500px;
+        height: 300px;
+    }
+
+    #slider #prev,
+    #slider #next {
+        width: 35px;
+        line-height: 35px;
+        font-size: 1.5rem;
+    }
+
+    /* Cards*/
+    container-wrapper {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .container-wrapper .container {
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 45%;
+        padding: 10px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .card img {
+        width: 170px;
+        height: 150px;
+    }
+
+    .head h3 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .card a {
+        font-size: 1rem;
+    }
+
+    /* Mini-Slider*/
+    .mini-slider {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .mini-slider .heading h2,
+    .mini-slider .heading h3 {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider {
+        display: flex;
+    }
+
+    .slide {
+        display: flex;
+        width: 1000px;
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .slide img {
+        width: 120px;
+        /* Around 2 images per row, with some gap */
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .nav-btn {
+        font-size: 16px;
+        top: 45%;
+        color: black;
+    }
+
+    .nav-btn:hover {
+        font-size: 18px;
+    }
+
+    /* footer*/
+    .footer {
+        padding: 15px 5px;
+        gap: 10px;
+    }
+
+    .footer hr {
+        display: none;
+    }
+}
+
